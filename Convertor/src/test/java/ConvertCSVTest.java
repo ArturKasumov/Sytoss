@@ -30,11 +30,7 @@ public class ConvertCSVTest {
     {
         Assert.assertEquals("Привет 19 парк\"Название\"", convert.convertWithQuotes("Привет,19,\"парк\"\"Название\"\""));
     }
-    /*@Test
-    public void convertQuotesAndCommas()
-    {
-        Assert.assertEquals("Artur Urka,ine\"BEST\" Kharkiv", convert.convertWithQuotes("Artur,\"Urka,ine\"\"BEST\"\"\",Kharkiv"));
-    }*/
+
 
     @Test
     public void fileIsFound() throws FileNotFoundException

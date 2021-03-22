@@ -75,29 +75,6 @@ public class ConvertCSV {
         return String.join(" ", ArrayString);
     }
 
-    public String convertWithQuotesAndCommas(String pStr) {
-
-        boolean isQuoteOpened = false;
-        StringBuilder resultStr = new StringBuilder();
-
-        for (int idx = 0; idx < pStr.length(); idx++) {
-            if (pStr.charAt(idx) == '\"') {
-                if (!isQuoteOpened)
-                    isQuoteOpened = true;
-                else isQuoteOpened = false;
-            } else if (pStr.charAt(idx) == ',') {
-                if (!isQuoteOpened)
-                    resultStr.append(" ");
-                else resultStr.append(',');
-            } else if (pStr.charAt(idx) == ' ') {
-                resultStr.append("");
-            } else resultStr.append(pStr.charAt(idx));
-        }
-        return resultStr.toString();
-
-
-    }
-
     public ArrayList readFile()  throws IOException {
 
         ArrayList list = new ArrayList();
