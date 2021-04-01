@@ -7,10 +7,15 @@ import java.util.*;
 public class FileContent {
 
     private File file;
-    private List<Line> lines = new ArrayList<Line>();
+    private List<Line> lines = new ArrayList<>();
 
     FileContent(String pFileName) {
         file = new File(pFileName);
+    }
+
+    FileContent(String pFileName, String className) {
+        file = new File(pFileName);
+
     }
 
     public File getFile() {
@@ -18,12 +23,16 @@ public class FileContent {
     }
 
     public boolean fileIsEmpty() throws IOException {
-        fillLines();
+        fillLines(Enam.LINE);
         return lines.size() == 0;
     }
 
     public void openFile(String filePath) {
         file = new File(filePath);
+    }
+
+    public List<Line> getLines() {
+        return lines;
     }
 
     public void outputLines() {
@@ -34,12 +43,23 @@ public class FileContent {
         }
     }
 
-    public void fillLines() throws IOException {
+    public void fillLines(Enam type) throws IOException {
         String s = null;
 
         try (BufferedReader f = new BufferedReader(new FileReader(file))) {
             while ((s = f.readLine()) != null) {
-                lines.add(new Line(s));
+                Line toReturn = null;
+                switch (type) {
+                    case PERSONLINE:
+                        toReturn = new PersonLine(s);
+                        break;
+                    case LINE:
+                        toReturn = new Line(s);
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Wrong line type:" + type);
+                }
+                lines.add(toReturn);
             }
         }
     }

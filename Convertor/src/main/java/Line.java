@@ -13,7 +13,7 @@ public class Line {
         return cells;
     }
 
-    public void separateLineIntoWords(String line) {
+    private void separateLineIntoWords(String line) {
         int idBegin = 0;
         int idEnd = 0;
 
