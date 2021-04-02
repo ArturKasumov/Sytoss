@@ -4,10 +4,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class FileContent {
+public class FileContent implements LineInterface {
 
     private File file;
-    private List<Line> lines = new ArrayList<>();
+    private List<LineInterface> lines = new ArrayList<>();
 
     FileContent(String pFileName) {
         file = new File(pFileName);
@@ -31,7 +31,7 @@ public class FileContent {
         file = new File(filePath);
     }
 
-    public List<Line> getLines() {
+    public List<LineInterface> getLines() {
         return lines;
     }
 
@@ -48,7 +48,7 @@ public class FileContent {
 
         try (BufferedReader f = new BufferedReader(new FileReader(file))) {
             while ((s = f.readLine()) != null) {
-                Line toReturn = null;
+                LineInterface toReturn = null;
                 switch (type) {
                     case PERSONLINE:
                         toReturn = new PersonLine(s);

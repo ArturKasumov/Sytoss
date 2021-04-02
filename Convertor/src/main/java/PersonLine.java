@@ -1,6 +1,12 @@
+import javax.xml.crypto.Data;
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class PersonLine extends Line {
-    private enum IdxForPersonLine {IDX, FIRSTNAME, SECONDNAME, LASTNAME, BIRTHDATE, COMMENT}
+public class PersonLine extends Line implements LineInterface {
+    private enum IdxForPersonLine {IDX, FIRSTNAME, LASTNAME, BIRTHDATE, COMMENT}
 
     PersonLine(String pStr) {
         super(pStr);
@@ -16,19 +22,15 @@ public class PersonLine extends Line {
         return personFirstName;
     }
 
-    public String getSecondName() {
-        String personSecondName = getCells().get(IdxForPersonLine.SECONDNAME.ordinal());
-        return personSecondName;
-    }
-
     public String getLastName() {
         String personLastName = getCells().get(IdxForPersonLine.LASTNAME.ordinal());
         return personLastName;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() throws Exception {
         String personBirthDate = getCells().get(IdxForPersonLine.BIRTHDATE.ordinal());
-        return personBirthDate;
+        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        return date.parse(personBirthDate);
     }
 
     public String getComment() {
