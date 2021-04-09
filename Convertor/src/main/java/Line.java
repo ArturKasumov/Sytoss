@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Line implements LineInterface{
+public class Line {
     List<String> cells = new ArrayList<String>();
 
     Line(String pStr) {

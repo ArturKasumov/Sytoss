@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class FileContentTest
 {
-    String filePath = "src\\test\\resources\\file.txt";
+    String filePath = "src\\test\\resources\\file.csv";
     FileContent workingFile;
     @Before
     public void init()

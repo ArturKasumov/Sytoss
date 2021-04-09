@@ -1,11 +1,8 @@
-import javax.xml.crypto.Data;
-import java.text.DateFormat;
-import java.text.FieldPosition;
-import java.text.ParsePosition;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class PersonLine extends Line implements LineInterface {
+public class PersonLine extends Line {
     private enum IdxForPersonLine {IDX, FIRSTNAME, LASTNAME, BIRTHDATE, COMMENT}
 
     PersonLine(String pStr) {

@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class WriterXML {
+public class WriterXML implements XMLWriter {
 
     private List<PersonLine> list;
     private String fileName;
@@ -17,7 +17,7 @@ public class WriterXML {
         this.list = list;
         this.fileName = fileName;
     }
-    public void writeFileUsingJDOM() throws Exception {
+    public void writeToXml() throws Exception {
         Document doc = new Document();
         doc.setRootElement(new Element("persons"));
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");

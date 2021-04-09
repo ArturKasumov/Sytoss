@@ -4,18 +4,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class FileContent implements LineInterface {
+public class FileContent {
 
     private File file;
-    private List<LineInterface> lines = new ArrayList<>();
+    private List<Line> lines = new ArrayList<>();
 
     FileContent(String pFileName) {
         file = new File(pFileName);
-    }
-
-    FileContent(String pFileName, String className) {
-        file = new File(pFileName);
-
     }
 
     public File getFile() {
@@ -23,7 +18,7 @@ public class FileContent implements LineInterface {
     }
 
     public boolean fileIsEmpty() throws IOException {
-        fillLines(Enam.LINE);
+        fillLines(EnumForLines.LINE);
         return lines.size() == 0;
     }
 
@@ -31,7 +26,7 @@ public class FileContent implements LineInterface {
         file = new File(filePath);
     }
 
-    public List<LineInterface> getLines() {
+    public List<Line> getLines() {
         return lines;
     }
 
@@ -43,12 +38,12 @@ public class FileContent implements LineInterface {
         }
     }
 
-    public void fillLines(Enam type) throws IOException {
+    public void fillLines(EnumForLines type) throws IOException {
         String s = null;
 
         try (BufferedReader f = new BufferedReader(new FileReader(file))) {
             while ((s = f.readLine()) != null) {
-                LineInterface toReturn = null;
+                Line toReturn = null;
                 switch (type) {
                     case PERSONLINE:
                         toReturn = new PersonLine(s);
