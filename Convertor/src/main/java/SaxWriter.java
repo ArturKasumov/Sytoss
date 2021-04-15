@@ -7,18 +7,18 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class SaxXmlWriter implements XMLWriter{
+public class SaxWriter extends Writer{
 
     private  List<PersonLine> list;
     private  String fileName;
 
-    SaxXmlWriter(List list, String fileName){
+    SaxWriter(List list, String fileName){
         this.list = list;
         this.fileName = fileName;
     }
 
-
-    public  void writeToXml() throws Exception {
+    @Override
+    void write(List<Line> lines) throws Exception {
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
         TransformerFactory tf = TransformerFactory.newInstance();
         if(!tf.getFeature(SAXTransformerFactory.FEATURE)){
@@ -67,6 +67,7 @@ public class SaxXmlWriter implements XMLWriter{
             th.endElement("", "", "person");
         }
         th.endElement("", "", "persons");
+
         th.endDocument();
     }
 }

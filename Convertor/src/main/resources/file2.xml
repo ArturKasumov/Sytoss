@@ -24,4 +24,28 @@
         <Birthday date="2000-05-19"/>
         <Comment Комментарий="Мясорубка"/>
     </person>
+    <person id="1">
+        <Name>
+            <FirstName FirstName="Artur"/>
+            <LastName SecondName="Kasumov"/>
+        </Name>
+        <Birthday date="2001-08-23"/>
+        <Comment Комментарий="Комментарий"/>
+    </person>
+    <person id="2">
+        <Name>
+            <FirstName FirstName="Lexa"/>
+            <LastName SecondName="Ishchenko"/>
+        </Name>
+        <Birthday date="2002-08-04"/>
+        <Comment Комментарий="Крутой чел"/>
+    </person>
+    <person id="3">
+        <Name>
+            <FirstName FirstName="Misha"/>
+            <LastName SecondName="Rybalka"/>
+        </Name>
+        <Birthday date="2000-05-19"/>
+        <Comment Комментарий="Мясорубка"/>
+    </person>
 </persons>
