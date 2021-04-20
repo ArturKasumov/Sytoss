@@ -14,7 +14,7 @@ public class DataConverter {
         List<Line> list = null;
         int maxJDOMFileLength = 20480;
         Reader reader = null;
-        if (inputFilepath.contains(".txt")) {
+        if (inputFilepath.contains(".csv")) {
             reader = new CSVReader(inputFilepath);
             list = reader.read();
 
@@ -31,7 +31,7 @@ public class DataConverter {
 
 
         Writer writer = null;
-        if (outputFilepath.contains(".txt")) {
+        if (outputFilepath.contains(".csv")) {
             writer = new CSVWriter(outputFilepath);
 
         } else if (outputFilepath.contains(".xml")) {
