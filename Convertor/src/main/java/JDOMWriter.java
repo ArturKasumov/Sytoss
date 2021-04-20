@@ -13,7 +13,7 @@ public class JDOMWriter extends Writer {
     private List<PersonLine> list;
     private String fileName;
 
-    JDOMWriter(List list, String fileName){
+    JDOMWriter(List list, String fileName) {
         this.list = list;
         this.fileName = fileName;
     }
@@ -24,13 +24,13 @@ public class JDOMWriter extends Writer {
         Document doc = new Document();
         doc.setRootElement(new Element("persons"));
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-        for(PersonLine p : list){
+        for (PersonLine p : list) {
             Element person = new Element("person");
-            person.setAttribute("id",p.getIDX());
+            person.setAttribute("id", p.getIDX());
             person.addContent(new Element("Name")
                     .addContent(new Element("FirstName").setText(p.getFirstName()))
                     .addContent(new Element("LastName").setText(p.getLastName())));
-            person.addContent(new Element("Birthday").setAttribute("date",date.format(p.getBirthDate())));
+            person.addContent(new Element("Birthday").setAttribute("date", date.format(p.getBirthDate())));
             person.addContent(new Element("Comment").setText(p.getComment()));
             doc.getRootElement().addContent(person);
         }

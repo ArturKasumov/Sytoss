@@ -26,7 +26,7 @@ public class PersonLine extends Line {
 
     public Date getBirthDate() throws Exception {
         String personBirthDate = getCells().get(IdxForPersonLine.BIRTHDATE.ordinal());
-        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
         return date.parse(personBirthDate);
     }
 

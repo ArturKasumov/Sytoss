@@ -4,5 +4,5 @@ import java.util.List;
 public abstract class Reader {
     protected List<Line> lines;
 
-    abstract List<Line> read();
+    abstract List<Line> read() throws Exception;
 }

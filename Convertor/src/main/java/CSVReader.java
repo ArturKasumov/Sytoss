@@ -5,11 +5,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVReader extends Reader{
+public class CSVReader extends Reader {
     private File file;
     private String filePath;
 
-    CSVReader(String filePath){
+    CSVReader(String filePath) {
         this.filePath = filePath;
         lines = new ArrayList<>();
     }
