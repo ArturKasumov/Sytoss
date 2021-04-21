@@ -1,3 +1,5 @@
+package Reader;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,14 +9,14 @@ import java.util.List;
 
 public class CSVReader extends Reader {
     private File file;
-    private String filePath;
+    private final String filePath;
 
-    CSVReader(String filePath) {
+    public CSVReader(String filePath) {
         this.filePath = filePath;
         lines = new ArrayList<>();
     }
 
-    private void openFile() {
+    public void openFile() {
         file = new File(filePath);
     }
 
@@ -23,7 +25,7 @@ public class CSVReader extends Reader {
 
         try (BufferedReader f = new BufferedReader(new FileReader(file))) {
             while ((s = f.readLine()) != null) {
-                Line toReturn = null;
+                Line toReturn;
                 switch (type) {
                     case PERSONLINE:
                         toReturn = new PersonLine(s);
@@ -40,7 +42,7 @@ public class CSVReader extends Reader {
     }
 
     @Override
-    List<Line> read() {
+    public List<Line> read() {
         openFile();
         try {
             fillLines(EnumForLines.PERSONLINE);

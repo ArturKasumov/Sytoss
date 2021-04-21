@@ -1,3 +1,7 @@
+package Writer;
+
+import Reader.Line;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -5,11 +9,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CSVWriter extends Writer{
+public class CSVWriter extends Writer {
     private File file;
     private String filePath;
 
-    CSVWriter(String filePath){
+    public CSVWriter(String filePath){
         this.filePath = filePath;
     }
 
@@ -18,7 +22,7 @@ public class CSVWriter extends Writer{
     }
 
     @Override
-    void write(List<Line> lines) throws Exception {
+    public void write(List<Line> lines) throws Exception {
         openFile();
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             for(Line person : lines){

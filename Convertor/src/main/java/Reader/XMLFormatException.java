@@ -1,5 +1,7 @@
+package Reader;
+
 public class XMLFormatException extends Exception {
-    XMLFormatException(String message) {
+    public XMLFormatException(String message) {
         super(message);
     }
 }

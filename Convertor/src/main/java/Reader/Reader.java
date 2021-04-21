@@ -1,8 +1,9 @@
-import java.io.File;
+package Reader;
+
 import java.util.List;
 
 public abstract class Reader {
     protected List<Line> lines;
 
-    abstract List<Line> read() throws Exception;
+    public abstract List<Line> read() throws Exception;
 }

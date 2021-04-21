@@ -1,4 +1,7 @@
+package Writer;
 
+import Reader.Line;
+import Reader.PersonLine;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.output.Format;
@@ -13,14 +16,14 @@ public class JDOMWriter extends Writer {
     private List<PersonLine> list;
     private String fileName;
 
-    JDOMWriter(List list, String fileName) {
+    public JDOMWriter(List list, String fileName) {
         this.list = list;
         this.fileName = fileName;
     }
 
 
     @Override
-    void write(List<Line> lines) throws Exception {
+    public void write(List<Line> lines) throws Exception {
         Document doc = new Document();
         doc.setRootElement(new Element("persons"));
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");

@@ -1,3 +1,5 @@
+package Reader;
+
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -11,13 +13,13 @@ import java.util.List;
 public class JDOMReader extends Reader {
     private String filePath;
 
-    JDOMReader(String filePath) {
+    public JDOMReader(String filePath) {
         this.filePath = filePath;
         lines = new ArrayList<>();
     }
 
     @Override
-    List<Line> read() {
+    public List<Line> read() {
         SAXBuilder sax = new SAXBuilder();
         try {
             Document doc = sax.build(new File(filePath));
