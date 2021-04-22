@@ -1,4 +1,8 @@
-package Reader;
+package reader;
+
+import lines.EnumForLines;
+import lines.Line;
+import lines.PersonLine;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,13 +46,9 @@ public class CSVReader extends Reader {
     }
 
     @Override
-    public List<Line> read() {
+    public List<Line> read() throws Exception {
         openFile();
-        try {
-            fillLines(EnumForLines.PERSONLINE);
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
+        fillLines(EnumForLines.PERSONLINE);
         return lines;
     }
 }

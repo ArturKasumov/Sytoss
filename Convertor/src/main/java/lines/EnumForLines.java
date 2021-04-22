@@ -1,4 +1,4 @@
-package Reader;
+package lines;
 
 public enum EnumForLines {
     PERSONLINE,

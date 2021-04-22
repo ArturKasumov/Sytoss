@@ -1,8 +1,6 @@
-import Reader.PersonLine;
-import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import lines.PersonLine;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 

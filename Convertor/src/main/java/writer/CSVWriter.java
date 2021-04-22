@@ -1,31 +1,32 @@
-package Writer;
+package writer;
 
-import Reader.Line;
+
+
+import lines.PersonLine;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CSVWriter extends Writer {
-    private File file;
-    private String filePath;
+    private final String filePath;
+    private final List<PersonLine> list;
 
-    public CSVWriter(String filePath){
+    public CSVWriter(List list,String filePath){
+        this.list = list;
         this.filePath = filePath;
     }
 
-    private void openFile(){
-        file = new File(filePath);
-    }
 
     @Override
-    public void write(List<Line> lines) throws Exception {
-        openFile();
+    public void write() throws IOException {
+        File file = new File(filePath);
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            for(Line person : lines){
+            for(PersonLine person : list){
                 for(int j=0;j<person.getCells().size();++j){
                     writer.write(format(person.getCells().get(j)));
                     if(j!=person.getCells().size()-1)

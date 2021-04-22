@@ -1,7 +1,6 @@
-package Writer;
+package writer;
 
-import Reader.Line;
-import Reader.PersonLine;
+import lines.PersonLine;
 import org.codehaus.plexus.util.xml.pull.MXSerializer;
 import org.codehaus.plexus.util.xml.pull.XmlSerializer;
 
@@ -11,8 +10,8 @@ import java.util.List;
 
 public class SaxWriter extends Writer {
 
-    private  List<PersonLine> list;
-    private  String fileName;
+    private final List<PersonLine> list;
+    private final String fileName;
 
     public SaxWriter(List list, String fileName){
         this.list = list;
@@ -20,7 +19,7 @@ public class SaxWriter extends Writer {
     }
 
     @Override
-    public void write(List<Line> lines) throws Exception {
+    public void write() throws Exception {
         SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
         XmlSerializer serializer = new MXSerializer();
         serializer.setOutput(new FileWriter(fileName));

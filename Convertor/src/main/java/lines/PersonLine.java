@@ -1,4 +1,5 @@
-package Reader;
+package lines;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

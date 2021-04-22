@@ -1,4 +1,6 @@
-package Reader;
+package reader;
+
+import lines.Line;
 
 import java.util.List;
 

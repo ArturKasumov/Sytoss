@@ -1,7 +1,7 @@
-import Reader.JDOMReader;
-import Reader.Line;
-import Reader.PersonLine;
-import Reader.XMLFormatException;
+import lines.Line;
+import lines.PersonLine;
+import reader.JDOMReader;
+import reader.XMLFormatException;
 import org.junit.Assert;
 import org.junit.Test;
 

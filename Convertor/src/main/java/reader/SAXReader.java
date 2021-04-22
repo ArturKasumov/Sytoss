@@ -1,5 +1,7 @@
-package Reader;
+package reader;
 
+import lines.Line;
+import lines.PersonLine;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -64,9 +66,6 @@ public class SAXReader extends Reader {
             eventType = xpp.next();
         }
 
-        /*} catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
-        }*/
         return lines;
     }
 

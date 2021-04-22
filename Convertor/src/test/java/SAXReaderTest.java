@@ -1,7 +1,8 @@
-import Reader.Line;
-import Reader.PersonLine;
-import Reader.SAXReader;
-import Reader.XMLFormatException;
+
+import lines.Line;
+import lines.PersonLine;
+import reader.SAXReader;
+import reader.XMLFormatException;
 import org.junit.Assert;
 import org.junit.Test;
 
