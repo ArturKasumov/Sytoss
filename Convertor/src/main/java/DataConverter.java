@@ -45,11 +45,11 @@ public class DataConverter {
 
         Writer writer;
         if (outputFilepath.contains(".csv")) {
-            writer = new CSVWriter(list,outputFilepath);
+            writer = new CSVWriter(list, outputFilepath);
 
         } else if (outputFilepath.contains(".xml")) {
 
-            if (list.size() > 4) {
+            if (list.size() > 20) {
                 writer = new SaxWriter(list, outputFilepath);
             } else {
                 writer = new JDOMWriter(list, outputFilepath);

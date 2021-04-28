@@ -8,6 +8,7 @@ import org.jdom2.input.SAXBuilder;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class JDOMReader extends Reader {
@@ -37,6 +38,6 @@ public class JDOMReader extends Reader {
             lines.add(new PersonLine(sb.toString()));
         }
 
-        return lines;
+        return Collections.unmodifiableList(lines);
     }
 }

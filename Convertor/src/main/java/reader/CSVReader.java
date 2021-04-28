@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CSVReader extends Reader {
@@ -25,7 +26,7 @@ public class CSVReader extends Reader {
     }
 
     public void fillLines(EnumForLines type) throws IOException {
-        String s = null;
+        String s;
 
         try (BufferedReader f = new BufferedReader(new FileReader(file))) {
             while ((s = f.readLine()) != null) {
@@ -49,6 +50,6 @@ public class CSVReader extends Reader {
     public List<Line> read() throws Exception {
         openFile();
         fillLines(EnumForLines.PERSONLINE);
-        return lines;
+        return Collections.unmodifiableList(lines);
     }
 }

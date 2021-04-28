@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -66,7 +67,7 @@ public class SAXReader extends Reader {
             eventType = xpp.next();
         }
 
-        return lines;
+        return Collections.unmodifiableList(lines);
     }
 
 }
